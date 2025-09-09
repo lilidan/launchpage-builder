@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaunchPage Builder - Drag & Drop Landing Page Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">LaunchPage Builder</h1>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" id="previewBtn">Preview</button>
+                    <button class="btn btn-primary" id="publishBtn">Publish</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Templates</h3>
+                    <div class="template-grid">
+                        <div class="template-card" data-template="startup">
+                            <div class="template-preview startup-preview"></div>
+                            <span>Startup</span>
+                        </div>
+                        <div class="template-card" data-template="product">
+                            <div class="template-preview product-preview"></div>
+                            <span>Product</span>
+                        </div>
+                        <div class="template-card" data-template="event">
+                            <div class="template-preview event-preview"></div>
+                            <span>Event</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Components</h3>
+                    <div class="component-list">
+                        <div class="component-item" draggable="true" data-component="hero">
+                            <span class="component-icon">🏆</span>
+                            Hero Section
+                        </div>
+                        <div class="component-item" draggable="true" data-component="features">
+                            <span class="component-icon">⭐</span>
+                            Features
+                        </div>
+                        <div class="component-item" draggable="true" data-component="testimonials">
+                            <span class="component-icon">💬</span>
+                            Testimonials
+                        </div>
+                        <div class="component-item" draggable="true" data-component="pricing">
+                            <span class="component-icon">💰</span>
+                            Pricing
+                        </div>
+                        <div class="component-item" draggable="true" data-component="cta">
+                            <span class="component-icon">📢</span>
+                            Call to Action
+                        </div>
+                        <div class="component-item" draggable="true" data-component="contact">
+                            <span class="component-icon">📧</span>
+                            Contact
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="canvas-container">
+                <div class="canvas-header">
+                    <h2>Your Landing Page</h2>
+                    <div class="canvas-actions">
+                        <button class="btn btn-small" id="undoBtn">Undo</button>
+                        <button class="btn btn-small" id="redoBtn">Redo</button>
+                        <button class="btn btn-small" id="clearBtn">Clear</button>
+                    </div>
+                </div>
+                <div class="canvas" id="canvas">
+                    <div class="drop-zone">
+                        <div class="drop-zone-content">
+                            <h3>Start Building Your Landing Page</h3>
+                            <p>Choose a template or drag components from the sidebar</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="properties-panel" id="propertiesPanel">
+                <h3>Properties</h3>
+                <div class="properties-content">
+                    <p>Select a component to edit its properties</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Preview</h2>
+                <button class="modal-close" id="closePreview">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="previewFrame" src="about:blank"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
